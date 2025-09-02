@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>iGirl — SEO Стратегия и Таймлайн</title>
+  <style>
+    :root{
+      --bg:#0b0d12;          /* тёмный фон — красиво смотрится в Notion */
+      --card:#121621;
+      --muted:#7f8aa3;
+      --text:#e7ecf6;
+      --accent:#6aa8ff;
+      --accent-2:#7df0c4;
+      --accent-3:#ffa76a;
+      --ring: #2a3550;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Inter", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:linear-gradient(180deg, #0b0d12 0%, #0e1220 100%);
+      color:var(--text);
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 64px}
+    header{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
+    header h1{font-size:22px;letter-spacing:.2px;margin:0}
+    header .subtitle{color:var(--muted);font-size:14px}
+
+    .legend{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--ring);padding:8px 10px;border-radius:999px;color:var(--muted);font-size:12px}
+    .dot{width:8px;height:8px;border-radius:50%}
+
+    .timeline{position:relative;margin-top:24px}
+    .rail{position:absolute;left:20px;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--ring),transparent);border-radius:4px}
+
+    .item{position:relative;margin-left:56px;margin-bottom:18px}
+    .item .pin{position:absolute;left:-44px;top:18px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#0b0d12;font-weight:700}
+    .pin.m1{background:var(--accent)}
+    .pin.m23{background:var(--accent-2)}
+    .pin.m4{background:var(--accent-3)}
+
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);padding:18px 18px 14px;box-shadow:0 6px 28px rgba(0,0,0,.35)}
+    .head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .phase{font-size:18px;margin:0}
+    .focus{font-size:12px;color:var(--muted)}
+
+    details{margin-top:10px}
+    summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;color:var(--accent);font-weight:600}
+    summary::-webkit-details-marker{display:none}
+
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+    .box{background:#0e1320;border:1px solid var(--ring);border-radius:12px;padding:12px}
+    .box h4{margin:0 0 8px 0;font-size:13px;color:#b7c2dc}
+    ul{margin:0;padding-left:18px}
+    li{margin:6px 0}
+
+    .footnote{margin-top:18px;color:var(--muted);font-size:12px}
+
+    /* Responsive */
+    @media (max-width: 780px){
+      .cols{grid-template-columns:1fr}
+      .rail{left:16px}
+      .item{margin-left:52px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>SEO Стратегия и Таймлайн — iGirl</h1>
+        <div class="subtitle">Поэтапный план: Техничка → Контент → Ссылки (12–16 мес. горизонт)</div>
+      </div>
+      <div class="legend" aria-label="Легенда этапов">
+        <span class="badge"><span class="dot" style="background:var(--accent)"></span>Месяц 1</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-2)"></span>Месяцы 2–3</span>
+        <span class="badge"><span class="dot" style="background:var(--accent-3)"></span>Месяц 4+</span>
+      </div>
+    </header>
+
+    <section class="timeline" role="list">
+      <div class="rail" aria-hidden="true"></div>
+
+      <!-- Месяц 1 -->
+      <article class="item" role="listitem">
+        <div class="pin m1" aria-hidden="true">1</div>
+        <div class="card">
+          <div class="head">
+            <h3 class="phase">Месяц 1 — Фундамент и стратегия</h3>
+            <span class="focus">Фокус: аудит, план, аналитика, СЯ, организация</span>
+          </div>
+          <div class="cols">
+            <div class="box">
+              <h4>Ключевые работы</h4>
+              <ul>
+                <li>SEO‑аудит: техничка, юзабилити, E‑E‑A‑T, ссылки, конкуренты</li>
+                <li>Аналитика: GSC, Я.Вебмастер, Topvisor (позиции, KPI)</li>
+                <li>Семантика: сбор, кластеризация, структура, H1</li>
+                <li>Оргпроцессы: Notion, Google Drive, YouTube, PM+тимлиды</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>Результаты месяца</h4>
+              <ul>
+                <li>Полный SEO‑аудит + точки роста</li>
+                <li>Стратегия на 12 месяцев</li>
+                <li>Семантическое ядро и контент‑план на 6 мес.</li>
+                <li>Настроенная аналитика и отчётность</li>
+              </ul>
+            </div>
+          </div>
+          <details>
+            <summary>Подробнее об оценках и настройках</summary>
+            <div class="cols" style="margin-top:10px">
+              <div class="box">
+                <h4>Оценки</h4>
+                <ul>
+                  <li>robots.txt, sitemap, canonicals; коммерческие факторы</li>
+                  <li>ПФ и релевантность; анкоры и качество доноров</li>
+                  <li>Конкуренты по топ‑кластерам (методики продвижения)</li>
+                </ul>
+              </div>
+              <div class="box">
+                <h4>Организация</h4>
+                <ul>
+                  <li>Кабинет проекта и клиента в Notion/Drive</li>
+                  <li>Еженедельные отчёты, встречи PM/тимлидов</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- Месяцы 2–3 -->
+      <article class="item" role="listitem">
+        <div class="pin m23" aria-hidden="true">2–3</div>
+        <div class="card">
+          <div class="head">
+            <h3 class="phase">Месяцы 2–3 — Контентное наполнение</h3>
+            <span class="focus">Фокус: ТЗ, публикации, мониторинг</span>
+          </div>
+          <div class="cols">
+            <div class="box">
+              <h4>Ключевые работы</h4>
+              <ul>
+                <li>ТЗ для копирайтеров (структура, параметры, ключи)</li>
+                <li>Проверка, согласование и публикация статей</li>
+                <li>Еженедельная публикация по контент‑плану</li>
+                <li>Topvisor: еженедельные отчёты по позициям</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>Результаты периода</h4>
+              <ul>
+                <li>SEO‑оптимизированные статьи на сайте</li>
+                <li>Регулярные отчёты и прозрачность работ</li>
+                <li>Отлаженные процессы контент‑менеджмента</li>
+              </ul>
+            </div>
+          </div>
+          <details>
+            <summary>Бюджеты и управление</summary>
+            <div class="cols" style="margin-top:10px">
+              <div class="box">
+                <h4>Бюджеты</h4>
+                <ul>
+                  <li>Topvisor (мониторинг позиций)</li>
+                  <li>Разработка и контент‑менеджмент</li>
+                  <li>Генерация статей</li>
+                </ul>
+              </div>
+              <div class="box">
+                <h4>Коммуникации</h4>
+                <ul>
+                  <li>Еженедельные синхронизации PM и тимлидов</li>
+                  <li>Еженедельные отчёты о проделанной работе</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+
+      <!-- Месяц 4+ -->
+      <article class="item" role="listitem">
+        <div class="pin m4" aria-hidden="true">4+</div>
+        <div class="card">
+          <div class="head">
+            <h3 class="phase">Месяц 4+ — Масштабирование</h3>
+            <span class="focus">Фокус: Контент + активное ссылочное</span>
+          </div>
+          <div class="cols">
+            <div class="box">
+              <h4>Ключевые работы</h4>
+              <ul>
+                <li>Непрерывная генерация и публикация статей</li>
+                <li>Ссылочная стратегия: анкоры, доноры, каталоги/агрегаторы</li>
+                <li>SEO‑тексты и PR‑статьи на внешних площадках</li>
+                <li>Анализ ссылочных показателей и корректировки</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>Результаты этапа</h4>
+              <ul>
+                <li>Внешние тематические/региональные ссылки</li>
+                <li>Ежемесячные отчёты по ссылкам и публикациям</li>
+                <li>Продолжение еженедельного контента</li>
+              </ul>
+            </div>
+          </div>
+          <details>
+            <summary>Горизонт и риски</summary>
+            <div class="cols" style="margin-top:10px">
+              <div class="box">
+                <h4>Планирование</h4>
+                <ul>
+                  <li>Горизонт результатов: 12–16 месяцев</li>
+                  <li>Постепенный рост органики</li>
+                </ul>
+              </div>
+              <div class="box">
+                <h4>Риски/Политики</h4>
+                <ul>
+                  <li>Аккуратность для тематики AI‑girlfriend</li>
+                  <li>Только «белые» методы, минимизация рисков модерации</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <p class="footnote">Подготовлено для проекта iGirl. Формат готов к встраиванию в Notion через блок «Embed». Для редактирования текста просто измените пункты в HTML.</p>
+  </div>
+</body>
+</html>
