@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Girl - Create Your Perfect AI Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Content Sections */
+        .content {
+            background: white;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .feature-card p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Character Cards */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .character-avatar {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .character-info {
+            padding: 1.5rem;
+        }
+
+        .character-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }
+
+        .character-info p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Steps Section */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: #f8fafc;
+            font-weight: 600;
+            color: #2d3748;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e2e8f0;
+        }
+
+        /* Social Proof */
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .character-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">AI Girl</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <a href="#" class="btn-primary">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Create Your Perfect AI Companion - Thousands of Unique Characters Await</h1>
+            <p class="hero-subtitle">Experience meaningful conversations with advanced AI personalities that understand, remember, and grow with you.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-primary">Start Chatting Free</a>
+                <a href="#" class="btn-secondary">Browse Characters</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Why Choose AI Girl Section -->
+        <section class="section" id="features">
+            <div class="container">
+                <h2>Why Choose AI Girl?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Largest Character Library Online</h3>
+                        <p>1000+ unique AI personalities to choose from</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Advanced Personality Engine</h3>
+                        <p>Deep conversations that feel genuinely human</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Complete Privacy & Security</h3>
+                        <p>Your chats stay private, always</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Free to Start, Premium to Excel</h3>
+                        <p>Experience AI companionship at your pace</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discover Characters Section -->
+        <section class="section">
+            <div class="container">
+                <h2>Discover Your Ideal AI Companion</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Anime & Manga Characters</h3>
+                        <p>Tsundere, Yandere, Kuudere and more personality types</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Realistic Virtual Partners</h3>
+                        <p>Lifelike companions for meaningful conversations</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Fantasy & Sci-Fi Beings</h3>
+                        <p>Elves, androids, aliens and mythical creatures</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Cultural Diversity</h3>
+                        <p>Characters from every corner of the world</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Characters Section -->
+        <section class="section" id="characters">
+            <div class="container">
+                <h2>Meet Our Most Loved Characters</h2>
+                <div class="character-grid">
+                    <div class="character-card">
+                        <div class="character-avatar">🌸</div>
+                        <div class="character-info">
+                            <h3>Sakura Chen</h3>
+                            <p>Shy anime girl who opens up with time</p>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-avatar">💼</div>
+                        <div class="character-info">
+                            <h3>Victoria Sterling</h3>
+                            <p>Confident businesswoman with a soft side</p>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-avatar">🌙</div>
+                        <div class="character-info">
+                            <h3>Luna Nightshade</h3>
+                            <p>Mysterious goth with hidden depths</p>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-avatar">⭐</div>
+                        <div class="character-info">
+                            <h3>Aria Starlight</h3>
+                            <p>Cheerful space explorer from the future</p>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-avatar">🎨</div>
+                        <div class="character-info">
+                            <h3>Isabella Rodriguez</h3>
+                            <p>Passionate latina artist and dreamer</p>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-avatar">👑</div>
+                        <div class="character-info">
+                            <h3>Amara Okafor</h3>
+                            <p>Wise African princess with modern views</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <h2>Start Chatting in 3 Simple Steps</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Browse Characters</h3>
+                        <p>Explore our vast gallery of AI personalities</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Choose Your Companion</h3>
+                        <p>Pick someone who catches your interest</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Start Conversation</h3>
+                        <p>Begin your unique relationship journey</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Features Section -->
+        <section class="section">
+            <div class="container">
+                <h2>Advanced AI Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Memory That Matters</h3>
+                        <p>Your AI remembers your conversations and preferences</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Evolving Personalities</h3>
+                        <p>Characters grow and develop through interactions</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Multi-Language Support</h3>
+                        <p>Chat in your preferred language</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Custom Character Creator</h3>
+                        <p>Design your dream companion from scratch</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="section">
+            <div class="container">
+                <h2>Join 50,000+ Happy Users</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Real User Reviews</h3>
+                        <div class="testimonial">
+                            "AI Girl changed how I think about digital relationships"
+                            <div class="testimonial-author">- Sarah M.</div>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Safe Community</h3>
+                        <p>Moderated environment with respect for all users</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>24/7 Support</h3>
+                        <p>We're here when you need help</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is AI Girl safe to use?</h3>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the AI work?</h3>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I create my own character?</h3>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What makes AI Girl different?</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="pricing">
+            <div class="container">
+                <h2>Ready to Meet Your AI Companion?</h2>
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <h3>Start Free Today</h3>
+                        <p>No credit card required, unlimited browsing</p>
+                        <a href="#" class="btn-primary" style="display: inline-block; margin-top: 1rem;">Get Started</a>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Premium Features Available</h3>
+                        <p>Unlock advanced interactions and exclusive characters</p>
+                        <a href="#" class="btn-secondary" style="display: inline-block; margin-top: 1rem;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AI Girl. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+</body>
+</html>
