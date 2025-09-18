@@ -70,6 +70,119 @@
             color: #667eea;
         }
 
+        /* Dropdown Menu Styles */
+        .has-dropdown {
+            position: relative;
+        }
+
+        .mega-menu, .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            border-radius: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .mega-menu {
+            width: 900px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            padding: 2rem;
+        }
+
+        .dropdown-menu {
+            width: 220px;
+            padding: 1rem;
+        }
+
+        .has-dropdown:hover .mega-menu,
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) translateX(-50%);
+        }
+
+        .has-dropdown:hover .dropdown-menu {
+            transform: translateY(0);
+        }
+
+        .mega-menu-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+        }
+
+        .mega-menu-column h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #667eea;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #edf2f7;
+        }
+
+        .mega-menu-column ul,
+        .dropdown-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mega-menu-column ul li,
+        .dropdown-menu ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .mega-menu-column ul li a,
+        .dropdown-menu ul li a {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.25rem 0;
+        }
+
+        .mega-menu-column ul li a:hover,
+        .dropdown-menu ul li a:hover {
+            color: #667eea;
+            transform: translateX(3px);
+        }
+
+        .mega-menu-footer {
+            grid-column: 1 / -1;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+
+        .view-all-btn {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+            color: #764ba2;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #4a5568;
+        }
+
         .btn-primary {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -592,6 +705,63 @@
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mega-menu {
+                position: static;
+                width: 100%;
+                transform: none;
+                padding: 1rem 0;
+                box-shadow: none;
+                background: #f7fafc;
+                border-radius: 8px;
+                margin-top: 0.5rem;
+            }
+            
+            .mega-menu-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                padding: 0.5rem 0;
+                box-shadow: none;
+                background: #f7fafc;
+                border-radius: 8px;
+            }
+            
+            .has-dropdown:hover .mega-menu,
+            .has-dropdown:hover .dropdown-menu {
+                transform: none;
+            }
+            
+            .mega-menu-column h4 {
+                font-size: 0.9rem;
+                margin-top: 1rem;
+            }
+            
+            .mega-menu-column:first-child h4:first-child {
+                margin-top: 0;
             }
             
             .category-hero h1 {
@@ -620,12 +790,144 @@
             <div class="logo">TheAIGirl</div>
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
-                <li><a href="#" style="color: #667eea;">Browse AI Boyfriends</a></li>
-                <li><a href="#">Create Custom</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#" class="btn-secondary">Login</a></li>
-                <li><a href="#" class="btn-primary">Start Free</a></li>
+                <li class="has-dropdown">
+                    <a href="/characters" style="color: #667eea;">Characters ▾</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-container">
+                            <!-- Column 1: Anime Styles -->
+                            <div class="mega-menu-column">
+                                <h4>Anime Styles</h4>
+                                <ul>
+                                    <li><a href="/tsundere">Tsundere</a></li>
+                                    <li><a href="/yandere">Yandere</a></li>
+                                    <li><a href="/kuudere">Kuudere</a></li>
+                                    <li><a href="/dandere">Dandere</a></li>
+                                    <li><a href="/deredere">Deredere</a></li>
+                                    <li><a href="/anime-ai">Anime AI</a></li>
+                                    <li><a href="/waifu-ai">Waifu AI</a></li>
+                                </ul>
+                                <h4 style="margin-top: 1.5rem;">Fantasy Types</h4>
+                                <ul>
+                                    <li><a href="/monster-girls">Monster Girls</a></li>
+                                    <li><a href="/succubus">Succubus</a></li>
+                                    <li><a href="/elfs">Elfs</a></li>
+                                    <li><a href="/aliens">Aliens</a></li>
+                                    <li><a href="/giants">Giants</a></li>
+                                    <li><a href="/half-humans">Half-humans</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Column 2: Character Types -->
+                            <div class="mega-menu-column">
+                                <h4>Character Types</h4>
+                                <ul>
+                                    <li><a href="/ai-boyfriend" style="color: #667eea; font-weight: 600;">AI Boyfriend</a></li>
+                                    <li><a href="/milf-ai">Milf AI</a></li>
+                                    <li><a href="/dilf-ai">Dilf AI</a></li>
+                                    <li><a href="/maids">Maids</a></li>
+                                    <li><a href="/robots-androids">Robots/Androids</a></li>
+                                    <li><a href="/vtuber-characters">VTuber Characters</a></li>
+                                    <li><a href="/pregnant-characters">Pregnant Characters</a></li>
+                                    <li><a href="/multiple-characters">Multiple Characters</a></li>
+                                </ul>
+                                <h4 style="margin-top: 1.5rem;">Personality</h4>
+                                <ul>
+                                    <li><a href="/dominant">Dominant</a></li>
+                                    <li><a href="/submissive">Submissive</a></li>
+                                    <li><a href="/romantic">Romantic</a></li>
+                                    <li><a href="/passionate">Passionate</a></li>
+                                    <li><a href="/intimate">Intimate</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Column 3: Genres & Origins -->
+                            <div class="mega-menu-column">
+                                <h4>Genres</h4>
+                                <ul>
+                                    <li><a href="/fantasy">Fantasy</a></li>
+                                    <li><a href="/science-fiction">Science Fiction</a></li>
+                                    <li><a href="/horror">Horror</a></li>
+                                    <li><a href="/detective">Detective</a></li>
+                                    <li><a href="/historical">Historical</a></li>
+                                    <li><a href="/adventure">Adventure</a></li>
+                                    <li><a href="/action">Action</a></li>
+                                    <li><a href="/philosophical">Philosophical</a></li>
+                                </ul>
+                                <h4 style="margin-top: 1.5rem;">From Media</h4>
+                                <ul>
+                                    <li><a href="/rpg-characters">RPG Characters</a></li>
+                                    <li><a href="/game-characters">Game Characters</a></li>
+                                    <li><a href="/movie-characters">Movie Characters</a></li>
+                                    <li><a href="/book-characters">Book Characters</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Column 4: Ethnicity & Appearance -->
+                            <div class="mega-menu-column">
+                                <h4>Ethnicity</h4>
+                                <ul>
+                                    <li><a href="/asian">Asian</a></li>
+                                    <li><a href="/arab">Arab</a></li>
+                                    <li><a href="/european">European</a></li>
+                                    <li><a href="/african">African</a></li>
+                                    <li><a href="/latino">Latino</a></li>
+                                </ul>
+                                <h4 style="margin-top: 1.5rem;">Appearance</h4>
+                                <ul>
+                                    <li><a href="/realistic">Realistic</a></li>
+                                    <li><a href="/petite">Petite</a></li>
+                                    <li><a href="/curvy">Curvy</a></li>
+                                    <li><a href="/giant-characters">Giant Characters</a></li>
+                                    <li><a href="/goths">Goths</a></li>
+                                    <li><a href="/tomboy">Tomboy</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Column 5: Roles & Gender -->
+                            <div class="mega-menu-column">
+                                <h4>Roles</h4>
+                                <ul>
+                                    <li><a href="/royal">Royal Characters</a></li>
+                                    <li><a href="/villains">Villains</a></li>
+                                    <li><a href="/heroes">Heroes</a></li>
+                                    <li><a href="/folklore">Folklore Characters</a></li>
+                                    <li><a href="/family">Family Characters</a></li>
+                                    <li><a href="/helpers">Helpers</a></li>
+                                </ul>
+                                <h4 style="margin-top: 1.5rem;">Gender</h4>
+                                <ul>
+                                    <li><a href="/female">Female Characters</a></li>
+                                    <li><a href="/non-binary">Non-binary Characters</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mega-menu-footer">
+                            <a href="/characters" class="view-all-btn">View All Characters →</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/create">Create AI Girlfriend</a></li>
+                <li><a href="/app">Application</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li class="has-dropdown">
+                    <a href="#">More ▾</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #e2e8f0;"></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                            <li><a href="/terms">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/auth" class="btn-secondary">Login</a></li>
+                <li><a href="/auth" class="btn-primary">Start Free</a></li>
             </ul>
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
@@ -1136,6 +1438,41 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+
+        // Handle dropdown menus on mobile
+        const dropdownTriggers = document.querySelectorAll('.has-dropdown > a');
+        dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = this.nextElementSibling;
+                    const isVisible = dropdown.style.display === 'block';
+                    
+                    // Close all dropdowns
+                    document.querySelectorAll('.mega-menu, .dropdown-menu').forEach(d => {
+                        d.style.display = 'none';
+                        d.style.opacity = '1';
+                        d.style.visibility = 'visible';
+                    });
+                    
+                    // Toggle current dropdown
+                    if (!isVisible) {
+                        dropdown.style.display = 'block';
+                    }
+                }
+            });
+        });
+
         // Filter functionality
         document.querySelectorAll('.quick-tag').forEach(tag => {
             tag.addEventListener('click', function() {
@@ -1174,6 +1511,17 @@
         document.querySelector('.search-input').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
             // Here you would filter the characters based on search
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.has-dropdown')) {
+                if (window.innerWidth <= 768) {
+                    document.querySelectorAll('.mega-menu, .dropdown-menu').forEach(d => {
+                        d.style.display = 'none';
+                    });
+                }
+            }
         });
     </script>
 </body>
