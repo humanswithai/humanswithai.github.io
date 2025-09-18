@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mature AI Companions - TheAIGirl | Browse 500+ Characters</title>
+    <meta name="description" content="Explore our collection of sophisticated AI companions. Find your perfect match among 500+ mature, intelligent characters ready for meaningful conversations.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --dark-bg: #1a1a2e;
+            --card-bg: #16213e;
+            --text-primary: #ffffff;
+            --text-secondary: #a8b2d1;
+            --accent: #667eea;
+            --hover-accent: #764ba2;
+            --border-color: #2d3561;
+            --success: #48bb78;
+            --warning: #ed8936;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+
+        .nav-categories {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-categories a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-categories a:hover,
+        .nav-categories a.active {
+            color: var(--accent);
+        }
+
+        .nav-categories a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            border-radius: 25px;
+            width: 250px;
+            transition: all 0.3s;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--accent);
+            width: 300px;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Category Hero */
+        .category-hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Main Layout */
+        .main-content {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Filters Sidebar */
+        .filters-sidebar {
+            width: 280px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .filter-option:hover {
+            color: var(--accent);
+        }
+
+        .filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+        }
+
+        .filter-option span {
+            flex: 1;
+        }
+
+        .filter-count {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .tag:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--accent);
+        }
+
+        .tag.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+        }
+
+        /* Sort Bar */
+        .sort-bar {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .sort-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .sort-option {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sort-option:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .sort-option.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-btn:hover,
+        .view-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Character Grid */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .character-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            border-color: var(--accent);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .online-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--warning);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .character-info {
+            padding: 1.25rem;
+        }
+
+        .character-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .character-age {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .character-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .character-tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        .character-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .action-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .action-btn.primary {
+            background: var(--primary-gradient);
+            border: none;
+            color: white;
+        }
+
+        .action-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Premium Badge */
+        .premium-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #333;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* CTA Card */
+        .cta-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            grid-column: span 2;
+        }
+
+        .cta-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .page-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 40px;
+        }
+
+        .page-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .page-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Load More */
+        .load-more {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .load-more-btn {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 1rem 3rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .load-more-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .filters-sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-categories {
+                display: none;
+            }
+            
+            .search-bar input {
+                width: 150px;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .category-stats {
+                margin-top: 1rem;
+            }
+            
+            .characters-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            
+            .cta-card {
+                grid-column: span 1;
+            }
+        }
+
+        /* Mobile Filter Toggle */
+        .mobile-filter-btn {
+            display: none;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1200px) {
+            .mobile-filter-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">TheAIGirl</div>
+                <div class="nav-categories">
+                    <a href="#">All Characters</a>
+                    <a href="#" class="active">Mature</a>
+                    <a href="#">Romantic</a>
+                    <a href="#">Anime</a>
+                    <a href="#">Fantasy</a>
+                    <a href="#">Realistic</a>
+                    <a href="#">Custom</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search characters...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button class="btn-primary">Start Free</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Hero -->
+    <div class="category-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Mature & Sophisticated AI Companions</h1>
+                    <p>Experience deep, meaningful conversations with experienced AI personalities</p>
+                </div>
+                <div class="category-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">523</div>
+                        <div class="stat-label">Characters</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">147</div>
+                        <div class="stat-label">Online Now</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">Avg Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <button class="mobile-filter-btn">🔧 Filters</button>
+        <div class="main-content">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <h3 class="filter-title">Age Range</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" checked>
+                            <span>35-40</span>
+                            <span class="filter-count">(156)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" checked>
+                            <span>40-45</span>
+                            <span class="filter-count">(203)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>45-50</span>
+                            <span class="filter-count">(98)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>50+</span>
+                            <span class="filter-count">(66)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">Personality Type</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Caring</span>
+                            <span class="filter-count">(234)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Confident</span>
+                            <span class="filter-count">(189)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Intellectual</span>
+                            <span class="filter-count">(145)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Adventurous</span>
+                            <span class="filter-count">(112)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Nurturing</span>
+                            <span class="filter-count">(178)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">Profession</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>CEO/Executive</span>
+                            <span class="filter-count">(67)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Doctor</span>
+                            <span class="filter-count">(45)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Teacher</span>
+                            <span class="filter-count">(89)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Artist</span>
+                            <span class="filter-count">(56)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Lawyer</span>
+                            <span class="filter-count">(38)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">Popular Tags</h3>
+                    <div class="tag-cloud">
+                        <span class="tag">Romantic</span>
+                        <span class="tag">Experienced</span>
+                        <span class="tag">Sophisticated</span>
+                        <span class="tag">Elegant</span>
+                        <span class="tag">Wise</span>
+                        <span class="tag">Successful</span>
+                        <span class="tag">Confident</span>
+                        <span class="tag">Charming</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Sort Bar -->
+                <div class="sort-bar">
+                    <div class="sort-options">
+                        <button class="sort-option active">Most Popular</button>
+                        <button class="sort-option">Newest</button>
+                        <button class="sort-option">Top Rated</button>
+                        <button class="sort-option">Most Active</button>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active">⚏</button>
+                        <button class="view-btn">☰</button>
+                    </div>
+                </div>
+
+                <!-- Characters Grid -->
+                <div class="characters-grid">
+                    <!-- Character Card 1 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            👩‍💼
+                            <span class="online-badge">
+                                <span class="online-dot"></span>
+                                Online
+                            </span>
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Victoria Sterling</h3>
+                            <p class="character-age">42 years old</p>
+                            <p class="character-description">
+                                Successful CEO with a passion for mentoring. Loves deep conversations about business, life, and personal growth.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Executive</span>
+                                <span class="character-tag">Mentor</span>
+                                <span class="character-tag">Ambitious</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Character Card 2 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            👩‍⚕️
+                            <span class="online-badge">
+                                <span class="online-dot"></span>
+                                Online
+                            </span>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Dr. Sophia Chen</h3>
+                            <p class="character-age">38 years old</p>
+                            <p class="character-description">
+                                Caring physician who balances professionalism with warmth. Expert in wellness and holistic health approaches.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Medical</span>
+                                <span class="character-tag">Caring</span>
+                                <span class="character-tag">Intelligent</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Character Card 3 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            👩‍🎨
+                            <span class="premium-badge">⭐ Premium</span>
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Isabella Rossi</h3>
+                            <p class="character-age">45 years old</p>
+                            <p class="character-description">
+                                Italian art curator with sophisticated taste. Passionate about culture, wine, and meaningful connections.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Artistic</span>
+                                <span class="character-tag">European</span>
+                                <span class="character-tag">Cultured</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Character Card 4 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            👩‍🏫
+                            <span class="online-badge">
+                                <span class="online-dot"></span>
+                                Online
+                            </span>
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Professor Emma Wright</h3>
+                            <p class="character-age">48 years old</p>
+                            <p class="character-description">
+                                Literature professor with a love for classical novels and philosophy. Enjoys intellectual discussions.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Academic</span>
+                                <span class="character-tag">Literary</span>
+                                <span class="character-tag">Thoughtful</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Character Card 5 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            💼
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Rachel Montgomery</h3>
+                            <p class="character-age">40 years old</p>
+                            <p class="character-description">
+                                Successful lawyer with a sharp wit and warm heart. Loves discussing current events and travel.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Legal</span>
+                                <span class="character-tag">Witty</span>
+                                <span class="character-tag">Traveled</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Card -->
+                    <div class="cta-card">
+                        <h3>Unlock Premium Characters</h3>
+                        <p>Get unlimited access to all 500+ mature AI companions with advanced features</p>
+                        <button class="btn-primary">Upgrade to Premium</button>
+                    </div>
+
+                    <!-- Character Card 6 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            👩‍💻
+                            <span class="online-badge">
+                                <span class="online-dot"></span>
+                                Online
+                            </span>
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Diana Tech</h3>
+                            <p class="character-age">36 years old</p>
+                            <p class="character-description">
+                                Tech entrepreneur who built her own startup. Loves discussing innovation and future technologies.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Tech-savvy</span>
+                                <span class="character-tag">Innovative</span>
+                                <span class="character-tag">Driven</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Character Card 7 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            🏃‍♀️
+                            <span class="new-badge">NEW</span>
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Jessica Fitness</h3>
+                            <p class="character-age">39 years old</p>
+                            <p class="character-description">
+                                Fitness coach and nutritionist who believes in holistic wellness. Motivating and supportive personality.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Athletic</span>
+                                <span class="character-tag">Motivating</span>
+                                <span class="character-tag">Healthy</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Character Card 8 -->
+                    <div class="character-card">
+                        <div class="character-image">
+                            👩‍🍳
+                            <span class="premium-badge">⭐ Premium</span>
+                        </div>
+                        <div class="character-info">
+                            <h3 class="character-name">Chef Margot</h3>
+                            <p class="character-age">44 years old</p>
+                            <p class="character-description">
+                                Michelin-starred chef with a passion for fine dining and wine pairing. Loves sharing culinary secrets.
+                            </p>
+                            <div class="character-tags">
+                                <span class="character-tag">Culinary</span>
+                                <span class="character-tag">Sophisticated</span>
+                                <span class="character-tag">Passionate</span>
+                            </div>
+                            <div class="character-actions">
+                                <button class="action-btn">💬 Preview</button>
+                                <button class="action-btn primary">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more">
+                    <button class="load-more-btn">Load More Characters</button>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn">←</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn">4</button>
+                    <button class="page-btn">5</button>
+                    <button class="page-btn">...</button>
+                    <button class="page-btn">26</button>
+                    <button class="page-btn">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>TheAIGirl</h4>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+                    Your perfect AI companion awaits. Experience meaningful connections with sophisticated AI personalities.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Mature</a></li>
+                    <li><a href="#">Romantic</a></li>
+                    <li><a href="#">Anime</a></li>
+                    <li><a href="#">Fantasy</a></li>
+                    <li><a href="#">Realistic</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li><a href="#">Voice Chat</a></li>
+                    <li><a href="#">Image Generation</a></li>
+                    <li><a href="#">Custom Characters</a></li>
+                    <li><a href="#">Memory System</a></li>
+                    <li><a href="#">Roleplay</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Content Guidelines</a></li>
+                    <li><a href="#">18+ Verification</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TheAIGirl. All rights reserved. Must be 18+ to use this service.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-option input').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                console.log('Filter changed:', checkbox.parentElement.textContent.trim());
+                // Here you would implement actual filtering logic
+            });
+        });
+
+        // Sort functionality
+        document.querySelectorAll('.sort-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.sort-option').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                console.log('Sort by:', btn.textContent);
+                // Here you would implement actual sorting logic
+            });
+        });
+
+        // View toggle
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                console.log('View changed');
+                // Here you would implement view change logic
+            });
+        });
+
+        // Character card interactions
+        document.querySelectorAll('.character-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('action-btn')) {
+                    console.log('Character clicked:', card.querySelector('.character-name').textContent);
+                }
+            });
+        });
+
+        // Preview button
+        document.querySelectorAll('.action-btn:not(.primary)').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const characterName = e.target.closest('.character-card').querySelector('.character-name').textContent;
+                console.log('Preview:', characterName);
+                alert(`Preview of ${characterName}: "Hello! I'm excited to chat with you and share meaningful conversations..."`);
+            });
+        });
+
+        // Start chat button
+        document.querySelectorAll('.action-btn.primary').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const characterName = e.target.closest('.character-card').querySelector('.character-name').textContent;
+                console.log('Start chat with:', characterName);
+                alert(`Starting chat with ${characterName}...`);
+            });
+        });
+
+        // Tag cloud
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.classList.toggle('active');
+                console.log('Tag toggled:', tag.textContent);
+            });
+        });
+
+        // Load more
+        document.querySelector('.load-more-btn').addEventListener('click', () => {
+            console.log('Loading more characters...');
+            // Here you would implement loading more characters
+            alert('Loading more characters...');
+        });
+
+        // Pagination
+        document.querySelectorAll('.page-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.textContent.includes('←') && !btn.textContent.includes('→') && !btn.textContent.includes('...')) {
+                    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    console.log('Page:', btn.textContent);
+                }
+            });
+        });
+
+        // Mobile filter toggle
+        document.querySelector('.mobile-filter-btn').addEventListener('click', () => {
+            const sidebar = document.querySelector('.filters-sidebar');
+            sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Search functionality
+        document.querySelector('.search-bar input').addEventListener('input', (e) => {
+            console.log('Searching for:', e.target.value);
+            // Here you would implement search logic
+        });
+
+        // Character stats animation
+        const animateStats = () => {
+            document.querySelectorAll('.stat-number').forEach(stat => {
+                const finalValue = stat.textContent;
+                if (!finalValue.includes('★')) {
+                    const numValue = parseInt(finalValue);
+                    let currentValue = 0;
+                    const increment = numValue / 50;
+                    const timer = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= numValue) {
+                            currentValue = numValue;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(currentValue);
+                    }, 20);
+                }
+            });
+        };
+
+        // Run animation on page load
+        window.addEventListener('load', animateStats);
+    </script>
+</body>
+</html>
