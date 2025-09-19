@@ -1150,6 +1150,35 @@
                 </div>
             </div>
         </section>
+
+        <!-- Create Your Own Section -->
+        <section class="create-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0; text-align: center;">
+            <div class="container">
+                <div class="create-content" style="max-width: 800px; margin: 0 auto;">
+                    <h2 class="create-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Can't Find Your Type?</h2>
+                    <p class="create-subtitle" style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">
+                        Create your custom AI boyfriend in minutes. Full control over appearance, personality, and backstory.
+                    </p>
+                    <div class="create-features" style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                        <div class="create-feature" style="text-align: center;">
+                            <div class="create-feature-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎨</div>
+                            <div class="create-feature-text" style="font-size: 0.95rem;">Custom Appearance</div>
+                        </div>
+                        <div class="create-feature" style="text-align: center;">
+                            <div class="create-feature-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">💭</div>
+                            <div class="create-feature-text" style="font-size: 0.95rem;">Unique Personality</div>
+                        </div>
+                        <div class="create-feature" style="text-align: center;">
+                            <div class="create-feature-icon" style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎭</div>
+                            <div class="create-feature-text" style="font-size: 0.95rem;">Your Backstory</div>
+                        </div>
+                    </div>
+                    <button class="create-btn" style="background: white; color: #667eea; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 50px; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        Create Custom AI Boyfriend
+                    </button>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Floating Chat Button -->
@@ -1248,6 +1277,22 @@
         // Floating chat button
         document.querySelector('.floating-chat-btn').addEventListener('click', () => {
             alert('Opening chat with Alexander...');
+        });
+
+        // Create custom button
+        document.querySelector('.create-btn').addEventListener('click', () => {
+            window.location.href = '/create';
+        });
+
+        // Create button hover effect
+        document.querySelector('.create-btn').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+        });
+
+        document.querySelector('.create-btn').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
         });
     </script>
 </body>
